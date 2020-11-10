@@ -18,4 +18,4 @@ echo "creating safe health infrastructure
 make init
 make plan apply
 
-echo "your safe health infrastructure is ready"
+echo "your Jango infrastructure is ready"
