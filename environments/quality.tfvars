@@ -1,0 +1,13 @@
+cluster_version    = "1.17"
+cluster_name       = "jango-quality"
+key_name           = "sf_key"
+availability_zones = ["us-west-2a", "us-west-2b"]
+region             = "us-west-2"
+Environment        = "quality"
+cidr               = "10.41.0.0/16"
+private_subnets    = ["10.31.32.0/19", "10.31.0.0/22", "10.31.64.0/19", "10.31.4.0/22"]
+public_subnets     = ["10.31.8.0/22", "10.31.16.0/22", "10.31.12.0/22", "10.31.20.0/22"]
+domain             = "qa.safe.internal"
+username           = "admin"
+password           = "safeishealth"
+bucket_name        = "jango-tfstate-2"
