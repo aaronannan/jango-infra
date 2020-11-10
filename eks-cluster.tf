@@ -4,10 +4,6 @@
 #  * EC2 Security Group to allow networking traffic with EKS cluster
 #  * EKS Cluster
 #
-resource "aws_key_pair" "sf_key" {
-  key_name   = var.key_name
-  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDItshIxvf/abwI1rR96alhUf91gP9uIyg2VjSHC1GeBNMc3Cd9j7TtQnhpoORVi+CPjkJykwSkgnrwCz7gOibkOG+6Ds1svkkS8DbGG6T/TEvp7oPl5p/nl76h/Mn9IlpWEUYjYNA7ZCqAcmiV4dd6paFe90NSj/FPviAbcuMkjbmbZXqgcPS0hglVZAJheml9OqEPss/BOj2oJzp6t0bJBmWRN0OnmBWQ2W6eyLdeKx4xtimnoZlfWg9+sR8H07+BBdkk/yJ6lRtpDhc4pbut4IWhc1NkgWC6dJ91oix2dG7zYcHjug2mjPQ0t/ssutC03yqr6fwH0jGC72gLWVpzP26SmrRlv8vhUhsnRWoEySHHwx8uK60CPEPVNSu+7oLhdkDKn5bsVN69DIfc58T9aalRSEHVptKglOy2TsNbMVB90PAEjnkf27oDmvrbLuc7HF00dWPqkn+ooHWgC1sq//qFEM3dtET9mzuS8sTa1+0zXIxzzKmJxDjH+HprWs7kJLYJji8yvHDgQArI7utKkJ3n6qQYzehO1VuPVRadk0UDIuovsznkbxxeh1rWBDh362PhvD4QOaYkrrTxqZqxtT7PhXV2ojdt4hmB27QX0lbiOf8HAKb4aLljd1lIiaT6pdyU2x8eeBgv33CQX3xXKBh7fhUWcSDDRtzBqPKIDQ== safehealth.me"
-}
 
 resource "aws_iam_role" "admin-role" {
   name = "admin-role"
@@ -53,7 +49,7 @@ module "eks" {
       asg_desired_capacity          = 1
       max_size                      = 1
       min_size                      = 1
-      key_name                      = var.key_name
+      key_name                      = "my_key"
       additional_security_group_ids = [aws_security_group.worker_group_mgmt_one.id]
       subnet_ids                    = module.vpc.private_subnets
     },
