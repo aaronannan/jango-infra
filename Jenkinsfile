@@ -1,21 +1,18 @@
 #!/usr/bin/env groovy
 pipeline {
     agent any
-
   //declare aws parameters
   environment {
     AWS_REGION         = 'us-east-2'
     AWS_DEFAULT_REGION = 'us-east-2'
-    AWS_DEFAULT_OUTPUT = 'text'
+    AWS_DEFAULT_OUTPUT = 'json'
 
   }
-
   options {
     buildDiscarder(logRotator(daysToKeepStr: '7'))
   }
 
   stages {
-
 
     stage('docker build push') {
       steps{
