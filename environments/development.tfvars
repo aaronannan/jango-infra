@@ -1,12 +1,12 @@
 cluster_version    = "1.17"
 cluster_name       = "jango-development"
-key_name           = "sf_key"
+key_name           = "jango_key"
 availability_zones = ["us-east-2a", "us-east-2b"]
 region             = "us-east-2"
 Environment        = "development"
 cidr               = "10.41.0.0/16"
-private_subnets    = ["10.41.32.0/19", "10.41.0.0/22", "10.41.64.0/19", "10.41.4.0/22"]
-public_subnets     = ["10.41.8.0/22", "10.41.16.0/22", "10.41.12.0/22", "10.41.20.0/22"]
+private_subnets    = ["10.41.32.0/19", "10.41.0.0/22"]
+public_subnets     = ["10.41.8.0/22", "10.41.16.0/22"]
 domain             = "dev.safe.internal"
 username           = "admin"
 password           = "safeishealth"
