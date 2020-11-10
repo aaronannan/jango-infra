@@ -9,5 +9,5 @@ private_subnets    = ["10.41.32.0/19", "10.41.0.0/22"]
 public_subnets     = ["10.41.8.0/22", "10.41.16.0/22"]
 domain             = "dev.safe.internal"
 username           = "admin"
-password           = "safeishealth"
+password           = "jango"
 bucket_name        = "jango-tfstate-2"
