@@ -49,7 +49,7 @@ module "eks" {
       asg_desired_capacity          = 1
       max_size                      = 1
       min_size                      = 1
-      key_name                      = "my_key"
+      key_name                      = var.key_name
       additional_security_group_ids = [aws_security_group.worker_group_mgmt_one.id]
       subnet_ids                    = module.vpc.private_subnets
     },
